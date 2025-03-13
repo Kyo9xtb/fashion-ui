@@ -1,31 +1,48 @@
+import { ReactNode, useLayoutEffect } from 'react';
+import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router';
+import { PublicRoutes } from './routes';
+import { DefaultLayout } from './layout';
 
+const Wrapper = ({ children }: { children: ReactNode }) => {
+    const location = useLocation();
+    useLayoutEffect(() => {
+        document.documentElement.scrollTo(0, 0);
+    }, [location.pathname]);
+    return children;
+};
 function App() {
-
-  return (
-    <>
-      {/* <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
-      <h2>Tessssss</h2>
-    </>
-  )
+    return (
+        <Router>
+            <Wrapper>
+                <div className="App">
+                    <Routes>
+                        {PublicRoutes.map((route, index) => {
+                            const Page = route.component;
+                            const Layout = DefaultLayout; //
+                            // if (route.layout) {
+                            //     Layout = route.layout;
+                            //     console.log("aaaaa");
+                                
+                            // } else if (route.layout === null) {
+                            //     console.log("bbbbbb");
+                                
+                            //     Layout = <></>;
+                            // }
+                            // console.log("Layout",Layout);
+                            
+                            return (
+                                <Route
+                                    key={index}
+                                    path={route.path}
+                                    element={Layout && <Layout>{Page && <Page />}</Layout>}
+                                />
+                            );
+                        })}
+                    </Routes>
+                </div>
+            </Wrapper>
+        </Router>
+    );
 }
 
-export default App
+export default App;

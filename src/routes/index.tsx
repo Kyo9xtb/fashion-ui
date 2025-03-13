@@ -1,0 +1,1 @@
+export {publicRoutes as PublicRoutes} from './routes'
