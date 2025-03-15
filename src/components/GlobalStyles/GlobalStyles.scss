@@ -271,6 +271,204 @@ a {
     -ms-border-radius: 99px;
     -o-border-radius: 99px;
 }
+.tf-btn-default {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    line-height: 20px;
+    i {
+        font-size: 20px;
+    }
+}
+.tf-social-icon {
+    --facebook-cl: #3b5998;
+    --twitter-cl: #555;
+    --instagram-cl: linear-gradient(#8a3ab9, #e95950, #fccc63);
+    --threads-cl: #e03566;
+    --youtube-cl: #cd201f;
+    --tiktok-cl: linear-gradient(#25f4ee, #000, #fe2c55);
+    --tiktok-cl2: #fe2c55;
+    --pinterest-cl: #cb2027;
+    --tumblr-cl: #37455c;
+    --vimeo-cl: #1ab7ea;
+    --snapchat-cl: #fd0;
+    --whatsapp-cl: #00e676;
+    --linked_in-cl: #176aff;
+    --wechat-cl: #1aad18;
+    --reddit-cl: #ff4500;
+    --line-cl: #00c34d;
+    --spotify-cl: #1e7d60;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+        color: var(--main);
+        border: 1px solid var(--main);
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+    .social-facebook {
+        &:hover {
+            background: var(--facebook-cl);
+            color: var(--white);
+            border: none;
+        }
+    }
+    .social-twitter {
+        &:hover {
+            background: var(--twitter-cl);
+            color: var(--white);
+            border: none;
+        }
+    }
+    .social-instagram {
+        &:hover {
+            background: var(--instagram-cl);
+            color: var(--white);
+            border: none;
+        }
+    }
+    .social-tiktok {
+        &:hover {
+            background: var(--tiktok-cl);
+            color: var(--white);
+            border: none;
+        }
+    }
+    .social-amazon {
+        &:hover {
+            background: var(--main);
+            color: var(--white);
+            border: none;
+        }
+    }
+    .social-pinterest {
+        &:hover {
+            background: var(--pinterest-cl);
+            color: var(--white);
+            border: none;
+        }
+    }
+}
+
 .text-secondary-2 {
     color: var(--secondary-2) !important;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.text-button {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 600;
+}
+.text-caption-1 {
+    font-size: 14px;
+    line-height: 22px;
+}
+.tfSubscribeMsg {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+}
+.tf-cart-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    .tf-checkbox-wrapper {
+        min-width: 1.6rem;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        input {
+            cursor: pointer;
+            display: block;
+            width: 18px;
+            height: 18px;
+            background-color: var(--white);
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -ms-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            &:checked + div {
+                background-color: var(--main);
+                i {
+                    transform: scale(1);
+                    -webkit-transform: scale(1);
+                    -moz-transform: scale(1);
+                    -ms-transform: scale(1);
+                    -o-transform: scale(1);
+                }
+            }
+        }
+        div {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            z-index: 5;
+            border: 1px solid var(--line);
+            background-color: var(--white);
+            color: var(--white);
+            pointer-events: none;
+            transition: all 0.25s ease-in-out;
+            -webkit-transition: all 0.25s ease-in-out;
+            -moz-transition: all 0.25s ease-in-out;
+            -ms-transition: all 0.25s ease-in-out;
+            -o-transition: all 0.25s ease-in-out;
+            i {
+                font-size: 11px;
+                transform: scale(0);
+                -webkit-transform: scale(0);
+                -moz-transform: scale(0);
+                -ms-transform: scale(0);
+                -o-transform: scale(0);
+            }
+        }
+    }
+    label {
+        font-weight: 400;
+        cursor: pointer;
+        a {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+        }
+    }
+}
+.tf-payment {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        img {
+            width: 36px;
+        }
+    }
 }
